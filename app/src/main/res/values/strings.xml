@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DriveModeTile</string>
+    <string name="tile_label">驾驶模式</string>
+</resources>
