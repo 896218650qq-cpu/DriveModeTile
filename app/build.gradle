@@ -1,0 +1,34 @@
+plugins {
+        id 'com.android.application'
+        }
+
+        android {
+            namespace 'com.sui.drivemodetile'
+                compileSdk 34
+
+                    defaultConfig {
+                            applicationId "com.sui.drivemodetile"
+                                    minSdk 26 // Android 8.0+
+                                            targetSdk 34 // 完美适配 Android 14
+                                                    versionCode 1
+                                                            versionName "1.0"
+                                                                }
+
+                                                                    // 关键：告诉 Gradle 你的扁平化文件布局结构
+                                                                        sourceSets {
+                                                                                main {
+                                                                                            java.srcDirs = ['.']
+                                                                                                        manifest.srcFile 'AndroidManifest.xml'
+                                                                                                                    res.srcDirs = ['res']
+                                                                                                                            }
+                                                                                                                                }
+
+                                                                                                                                    buildTypes {
+                                                                                                                                            release {
+                                                                                                                                                        minifyEnabled true      // 开启混淆优化
+                                                                                                                                                                    shrinkResources true   // 自动剔除无用资源，保证 APK 体积极致轻量
+                                                                                                                                                                                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+                                                                                                                                                                                        }
+                                                                                                                                                                                            }
+                                                                                                                                                                                            }
+}
